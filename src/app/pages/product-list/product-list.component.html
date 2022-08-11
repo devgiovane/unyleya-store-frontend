@@ -1,0 +1,30 @@
+<section class="container pt-4">
+	<app-content icon="list" [navs]="navs"></app-content>
+	<app-toast [id]="toast" [message]="message" color="bg-success"></app-toast>
+	<div class="row mb-3">
+		<div class="col">
+			<button type="button" class="btn btn-primary" (click)="goToCreateProduct()">Create</button>
+		</div>
+	</div>
+	<div class="row" *ngIf="products.length > 0 && !isLoading">
+		<div class="col-3 mb-3" *ngFor="let product of products">
+			<app-card
+				[product]="product"
+				[onDelete]="onDelete.bind(this)"
+				[onEdit]="onEdit.bind(this)"
+			></app-card>
+		</div>
+	</div>
+	<div class="row" *ngIf="products.length <= 0 && isLoading">
+		<div class="col d-flex justify-content-center">
+			Loading...
+		</div>
+	</div>
+	<div class="row" *ngIf="products.length <= 0 && !isLoading">
+		<div class="row">
+			<div class="col d-flex justify-content-center">
+				Product list not found!
+			</div>
+		</div>
+	</div>
+</section>

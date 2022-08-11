@@ -1,0 +1,13 @@
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+		<span class="material-icons text-secondary me-2">{{ icon }}</span>
+		<li *ngFor="let nav of navs" class="breadcrumb-item active" aria-current="page">
+			<a routerLink="{{ nav.path }}" *ngIf="nav.path; else elseBlock">
+				{{ nav.text }}
+			</a>
+			<ng-template #elseBlock>
+				{{ nav.text }}
+			</ng-template>
+		</li>
+	</ol>
+</nav>

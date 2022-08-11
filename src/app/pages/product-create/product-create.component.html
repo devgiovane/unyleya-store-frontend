@@ -1,0 +1,47 @@
+<section class="container pt-4">
+	<app-content icon="list" [navs]="navs"></app-content>
+	<h2>New product</h2>
+	<hr />
+	<form>
+		<div class="row">
+			<div class="col-12 mb-3">
+				<label for="name" class="form-label">Name</label>
+				<input
+					id="name"
+					type="text"
+					name="name"
+					class="form-control"
+					placeholder="Enter the name"
+					[(ngModel)]="product.name"
+					[ngClass]="{'is-invalid': errors.name}"
+				>
+				<div class="invalid-feedback">
+					Name is not empty!
+				</div>
+			</div>
+			<div class="col-12 mb-3">
+				<label for="price" class="form-label">Price $</label>
+				<input
+					id="price"
+					type="number"
+					name="price"
+					class="form-control"
+					placeholder="Enter the price $"
+					[(ngModel)]="product.price"
+					[ngClass]="{'is-invalid': errors.price}"
+				>
+				<div class="invalid-feedback">
+					The price must be greater than 0!
+				</div>
+			</div>
+		</div>
+		<button
+			type="submit"
+			class="btn btn-primary float-end"
+			(click)="createProduct()"
+		>
+			Save
+		</button>
+		<button type="button" class="btn btn-danger float-end me-2" (click)="goToListProducts()">Cancel</button>
+	</form>
+</section>

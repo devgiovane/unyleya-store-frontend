@@ -1,0 +1,10 @@
+.product {
+	transition: transform .5s;
+}
+
+.product:hover {
+	z-index: 2;
+	cursor: pointer;
+	transform: scale(1.06);
+	transition: transform .5s;
+}

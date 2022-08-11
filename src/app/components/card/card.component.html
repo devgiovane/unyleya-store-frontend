@@ -1,0 +1,21 @@
+<div class="card product" style="width: 18rem;">
+	<img src="assets/nike.webp" class="card-img-top" alt="Image">
+	<div class="card-body">
+		<h5 class="card-title">{{ product.name }}</h5>
+		<p class="card-text">{{ product.price | currency }}</p>
+	</div>
+	<div class="card-footer">
+		<div class="row">
+			<div class="col pe-0 d-grid gap-2">
+				<button class="btn btn-warning" type="button" (click)="onEdit(product)">
+					Edit
+				</button>
+			</div>
+			<div class="col ps-0 d-grid gap-2">
+				<button class="btn btn-danger" type="button" (click)="onDelete(product)">
+					Delete
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
